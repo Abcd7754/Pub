@@ -1,0 +1,21 @@
+﻿{% extends "Base.html" %}
+{% block body %}
+<div class="container">
+    <h3 class="text-center my-3">Tasks Assignment</h3>
+    <form action="/AssignTasks" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="TaskTitle" class="form-label">Task Title</label>
+            <input type="text" class="form-control" name="TaskTitle" id="TaskTitle">
+            <div id="TasktitleHelp" class="form-text">It should be short and relevant</div>
+            </div>
+            <div class="mb-3">
+                <label for="TaskDescription" class="form-label">Task Description</label>
+                <textarea class="form-control" id="TaskDescription" name="TaskDescription" rows="3"></textarea>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+        {% endblock body %}

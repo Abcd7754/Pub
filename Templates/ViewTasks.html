@@ -1,0 +1,24 @@
+﻿{% extends "Base.html" %}
+{% block body %}
+{% for task in tasks %}
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <h2>{{task.TaskTitle}}</h2>
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <h5>{{task.TaskDescription|slice:15}}</h5>
+            </div>
+            <a href="/ViewTaskDescription/{{task.TaskTitle}}" class="text-dark"><button class="btn btn-primary">Read More...</button></a>
+           
+        </div>
+        
+    </div>
+    
+    
+</div>
+{% endfor %}
+{% endblock body %}

@@ -1,0 +1,29 @@
+﻿{% extends "Base.html" %}
+{% block body %}
+
+<h4 class="text-center py-3"><u>Assigned Tasks</u></h4>
+
+<table id="ViewTblId" class="table table-hover">
+    <thead id="theadId">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Task Title</th>
+            <th scope="col">Task Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in tasks %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{task.TaskTitle}}</td>
+            <td>{{task.TaskDescription}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<script>
+    $(document).ready(function () {
+        $('#ViewTblId').DataTable();
+    });
+</script>
+{% endblock body %}
